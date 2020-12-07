@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="260dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/item_product">
+    android:background="@drawable/item_product"
+    android:layout_margin="7.5dp">
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/img_order_popular"
+        android:id="@+id/imgofproduct"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:scaleType="fitXY"
@@ -14,7 +15,7 @@
         android:src="@drawable/mon1"
         app:riv_corner_radius="5dp"/>
     <TextView
-        android:id="@+id/title_order_popular"
+        android:id="@+id/nameofproduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -36,26 +37,33 @@
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
         android:weightSum="10">
-        <TextView
-            android:id="@+id/price_popular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="69.000"
-            android:textColor="@color/black"
-            android:textSize="17sp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="đ"
-            android:textSize="17sp"
-            android:layout_marginLeft="3dp"
-            android:textColor="@color/black"/>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="8">
+            <TextView
+                android:id="@+id/priceofproduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="69.000"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="đ"
+                android:textSize="17sp"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:orientation="horizontal"
             android:gravity="right">
             <ImageView
+                android:id="@+id/buttonbuy"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_add" />
