@@ -39,11 +39,12 @@ public class SectionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         sectionViewHolder.getTitle().setText(sections.get(position).getHeaderTitle());
         ArrayList list = sections.get(position).getListContent();
         if (list.get(0) instanceof News){
-            NewAdapter newAdapter = new NewAdapter(sections.get(position).getListContent(),context);
+            NewsAdapter newsAdapter = new NewsAdapter(sections.get(position).getListContent(),context);
             sectionViewHolder.getContent().setHasFixedSize(true);
             sectionViewHolder.getContent().setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-            sectionViewHolder.getContent().setAdapter(newAdapter);
+            sectionViewHolder.getContent().setAdapter(newsAdapter);
         }
+
     }
     @Override
     public int getItemCount() {

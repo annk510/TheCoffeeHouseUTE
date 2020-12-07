@@ -14,11 +14,11 @@ import com.example.thecoffeehouse.ViewHolder.NewViewHolder;
 
 import java.util.ArrayList;
 
-public class NewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     ArrayList<News> news;
     Context context;
 
-    public NewAdapter(ArrayList<News> news, Context context) {
+    public NewsAdapter(ArrayList<News> news, Context context) {
         this.news = news;
         this.context = context;
     }
@@ -28,6 +28,7 @@ public class NewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.item_news,parent,false);
+
         return new NewViewHolder(itemView);
     }
 

@@ -1,6 +1,8 @@
 package com.example.thecoffeehouse.Model;
 
-public class News {
+import java.io.Serializable;
+
+public class News implements Serializable {
     private int image;
     private String title;
     private String description;
