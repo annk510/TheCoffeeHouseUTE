@@ -1,9 +1,11 @@
 package com.example.thecoffeehouse.View;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +15,11 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.thecoffeehouse.Adapter.ProductAdapter;
+import com.example.thecoffeehouse.Model.Product;
 import com.example.thecoffeehouse.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,9 +28,7 @@ import com.example.thecoffeehouse.R;
  */
 public class Item_order_popular extends Fragment {
     GridView gridView;
-    String[] fruitTitle  = {"Sôcôla Lúa Mạch Nóng","Trà sữa Mắc Ca Trân Châu Trắng","Cà Phê Lúa Mạch Đá","Cà Phê Sữa Đá"};
-    String[] fruitPrice = {"69.000","45.000","25.000","35.000"};
-    int[] fruitImage={R.drawable.mon1,R.drawable.mon2,R.drawable.mon3,R.drawable.mon4};
+    ArrayList<Product> productArrayList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,38 +76,52 @@ public class Item_order_popular extends Fragment {
         // Inflate the layout for this fragment
         View v =inflater.inflate(R.layout.fragment_item_order_popular, container, false);
 
-        gridView = v.findViewById(R.id.gridview_popular);
-        CustomAdapter customAdapter = new CustomAdapter();
-        gridView.setAdapter(customAdapter);
+        productArrayList = new ArrayList<Product>();
+
+        Product product1 = new Product();
+        product1.setName("Sôcôla Lúa Mạch Nóng");
+        product1.setPrice("69.000");
+        product1.setImg(R.drawable.mon1);
+        productArrayList.add(product1);
+
+        Product product2 = new Product();
+        product2.setName("Trà sữa Mắc Ca Trân Châu Trắng");
+        product2.setPrice("70.000");
+        product2.setImg(R.drawable.mon2);
+        productArrayList.add(product2);
+
+        Product product3 = new Product();
+        product3.setName("Cà Phê Lúa Mạch Đá");
+        product3.setPrice("71.000");
+        product3.setImg(R.drawable.mon3);
+        productArrayList.add(product3);
+
+        Product product4 = new Product();
+        product4.setName("Cà Phê Sữa Đá");
+        product4.setPrice("72.000");
+        product4.setImg(R.drawable.mon4);
+        productArrayList.add(product4);
+        productArrayList.add(product1);
+        productArrayList.add(product2);
+        productArrayList.add(product3);
+        productArrayList.add(product4);
+        productArrayList.add(product1);
+        productArrayList.add(product2);
+        productArrayList.add(product3);
+        productArrayList.add(product4);
+
+        RecyclerView recyclerView = v.findViewById(R.id.gridview_popular);
+        ProductAdapter productAdapter = new ProductAdapter(productArrayList,getActivity());
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        recyclerView.setAdapter(productAdapter);
+
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         return v;
     }
-    private class CustomAdapter extends BaseAdapter {
-        @Override
-        public int getCount() {
-            return fruitImage.length;
-        }
 
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view1 = getLayoutInflater().inflate(R.layout.item_order_popular,null);
-            TextView title = view1.findViewById(R.id.title_order_popular);
-            TextView price = view1.findViewById(R.id.price_popular);
-            ImageView image = view1.findViewById(R.id.img_order_popular);
-
-            title.setText(fruitTitle[position]);
-            price.setText(fruitPrice[position]);
-            image.setImageResource(fruitImage[position]);
-            return  view1;
-        }
-    }
 }
