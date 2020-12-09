@@ -14,7 +14,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="11dp"
-        android:layout_marginEnd="5dp" />
+        android:layout_marginEnd="5dp"
+        android:clickable="false"/>
     <TextView
         android:id="@+id/nameoftopping"
         android:layout_width="0dp"

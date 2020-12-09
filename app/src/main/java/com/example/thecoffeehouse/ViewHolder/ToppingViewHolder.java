@@ -14,15 +14,6 @@ public class ToppingViewHolder extends RecyclerView.ViewHolder implements View.O
     private TextView price;
     private CheckBox checkBox;
     private ItemClickListener itemClickListener;
-    private int adapterposition;
-
-    public int getAdapterposition() {
-        return adapterposition;
-    }
-
-    public void setAdapterposition(int adapterposition) {
-        this.adapterposition = adapterposition;
-    }
 
     public TextView getPrice() {
         return price;
@@ -61,7 +52,6 @@ public class ToppingViewHolder extends RecyclerView.ViewHolder implements View.O
         this.setName(itemView.findViewById(R.id.nameoftopping));
         this.setPrice(itemView.findViewById(R.id.priceoftopping));
         this.setCheckBox(itemView.findViewById(R.id.checkBox));
-        this.setAdapterposition(getAdapterPosition());
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
     }

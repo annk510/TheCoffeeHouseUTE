@@ -15,7 +15,7 @@ public class SizeViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     private TextView price;
     private RadioButton radioButton;
     private ItemClickListener itemClickListener;
-    private int lastSelectedPosition = -1;
+    private int lastSelectedPosition = 1;
     public TextView getSize() {
         return size;
     }

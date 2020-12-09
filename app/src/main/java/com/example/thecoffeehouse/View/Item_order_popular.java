@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.example.thecoffeehouse.Adapter.ProductAdapter;
 import com.example.thecoffeehouse.Model.Product;
+import com.example.thecoffeehouse.Model.Size;
+import com.example.thecoffeehouse.Model.Topping;
 import com.example.thecoffeehouse.R;
 
 import java.util.ArrayList;
@@ -80,25 +82,49 @@ public class Item_order_popular extends Fragment {
 
         Product product1 = new Product();
         product1.setName("Sôcôla Lúa Mạch Nóng");
-        product1.setPrice("69.000");
+        product1.setPrice("69000");
         product1.setImg(R.drawable.mon1);
+        ArrayList<Size> sizes1 = new ArrayList<>();
+        sizes1.add(new Size("Nhỏ",""));
+        sizes1.add(new Size("Vừa","5000"));
+        sizes1.add(new Size("Lớn","10000"));
+        product1.setSize(sizes1);
+        ArrayList<Topping> toppings1 = new ArrayList<>();
+        toppings1.add(new Topping("Expresso","5000"));
+        toppings1.add(new Topping("Sauce Chocolate","10000"));
+        product1.setTopping(toppings1);
         productArrayList.add(product1);
 
         Product product2 = new Product();
         product2.setName("Trà sữa Mắc Ca Trân Châu Trắng");
-        product2.setPrice("70.000");
+        product2.setPrice("70000");
         product2.setImg(R.drawable.mon2);
+        ArrayList<Size> sizes2 = new ArrayList<>();
+        sizes2.add(new Size("Nhỏ",""));
+        sizes2.add(new Size("Vừa","5000"));
+        product2.setSize(sizes2);
+        ArrayList<Topping> toppings2 = new ArrayList<>();
+        toppings2.add(new Topping("Expresso","6000"));
+        toppings2.add(new Topping("Sauce Chocolate","12000"));
+        product2.setTopping(toppings2);
         productArrayList.add(product2);
 
         Product product3 = new Product();
         product3.setName("Cà Phê Lúa Mạch Đá");
-        product3.setPrice("71.000");
+        product3.setPrice("71000");
         product3.setImg(R.drawable.mon3);
+        ArrayList<Size> sizes3 = new ArrayList<>();
+        product3.setSize(sizes3);
+        ArrayList<Topping> toppings3 = new ArrayList<>();
+        toppings3.add(new Topping("Expresso","6000"));
+        toppings3.add(new Topping("Sauce Chocolate","12000"));
+        toppings3.add(new Topping("Sauce ahihi","15000"));
+        product3.setTopping(toppings3);
         productArrayList.add(product3);
 
         Product product4 = new Product();
         product4.setName("Cà Phê Sữa Đá");
-        product4.setPrice("72.000");
+        product4.setPrice("72000");
         product4.setImg(R.drawable.mon4);
         productArrayList.add(product4);
         productArrayList.add(product1);
