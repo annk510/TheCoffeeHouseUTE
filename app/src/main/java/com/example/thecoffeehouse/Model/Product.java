@@ -13,6 +13,8 @@ public class Product implements Serializable {
     private int img;
 
     public Product() {
+        this.setSize(new ArrayList<Size>());
+        this.setTopping(new ArrayList<Topping>());
     }
 
     public Product(String name, String description, String price, ArrayList<Size> size, ArrayList<Topping> topping) {

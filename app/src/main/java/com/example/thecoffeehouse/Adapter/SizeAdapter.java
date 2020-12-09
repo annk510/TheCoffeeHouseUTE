@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.thecoffeehouse.Model.Product_order;
 import com.example.thecoffeehouse.Model.Size;
 import com.example.thecoffeehouse.R;
 import com.example.thecoffeehouse.ViewHolder.ItemClickListener;
@@ -19,7 +20,8 @@ import java.util.ArrayList;
 public class SizeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     ArrayList<Size> sizeArrayList;
     Context context;
-    private int lastCheckedPosition = -1;
+    SizeViewHolder viewHolder;
+    private int lastCheckedPosition = 0;
 
     public SizeAdapter(ArrayList<Size> sizeArrayList, Context context) {
         this.sizeArrayList = sizeArrayList;
@@ -45,8 +47,18 @@ public class SizeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             public void onClick(View view, int position, boolean isLongClick) {
                 lastCheckedPosition = sizeViewHolder.getAdapterPosition();
                 notifyDataSetChanged();
+                int priceofsize;
+                try {
+                     priceofsize = Integer.parseInt(sizeArrayList.get(position).getPrice());
+                }catch (NumberFormatException e){
+                     priceofsize =0;
+                }
+                Product_order product_order = ProductAdapter.product_order;
+                product_order.setPriceofsize(priceofsize);
+                ProductAdapter.totalmoney.setText(String.valueOf(product_order.getTotalMoney()));
             }
         });
+        viewHolder = sizeViewHolder;
     }
 
     @Override
