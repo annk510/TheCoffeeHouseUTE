@@ -3,12 +3,20 @@ package com.example.thecoffeehouse.View;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.thecoffeehouse.Adapter.ProductAdapter;
+import com.example.thecoffeehouse.Model.Product;
+import com.example.thecoffeehouse.Model.Size;
+import com.example.thecoffeehouse.Model.Topping;
 import com.example.thecoffeehouse.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +24,7 @@ import com.example.thecoffeehouse.R;
  * create an instance of this fragment.
  */
 public class Item_order_food extends Fragment {
-
+    ArrayList<Product> productArrayList;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +69,79 @@ public class Item_order_food extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_order_food, container, false);
+        View v =inflater.inflate(R.layout.fragment_item_order_food, container, false);
+        productArrayList = new ArrayList<Product>();
+
+        Product product1 = new Product();
+        product1.setName("Macca Phủ Socola");
+        product1.setPrice("45000");
+        product1.setImg(R.drawable.mon1);
+        product1.setDescription("Sô cô la thơm lừng bao bọc hạt mắc ca bùi béo thiệt ngon - món ăn vặt" +
+                "đắng nhẹ, ngọt ngào không thể thiếu cho mùa Giáng sinh ấm áp, cắn 1 miếng là mê ngay" +
+                "và nhâm nhi với món nước nào cũng hợp đấy");
+        productArrayList.add(product1);
+
+        Product product2 = new Product();
+        product2.setName("Trà sữa Mắc Ca Trân Châu Trắng");
+        product2.setPrice("70000");
+        product2.setImg(R.drawable.mon2);
+        ArrayList<Size> sizes2 = new ArrayList<>();
+        sizes2.add(new Size("Nhỏ","0"));
+        sizes2.add(new Size("Vừa","5000"));
+        product2.setSize(sizes2);
+        ArrayList<Topping> toppings2 = new ArrayList<>();
+        toppings2.add(new Topping("Expresso","6000"));
+        toppings2.add(new Topping("Sauce Chocolate","12000"));
+        product2.setTopping(toppings2);
+        product2.setDescription("Đổi vị tươi mới - Vừa ngon vừa khỏe. Mỗi ngày với Nhà sẽ " +
+                "là điều tươi mới hơn với sữa đặt hạt mắc ca thơm ngon, bổ dưỡng quyện cùng " +
+                "nền trà OOlong cho vị cân bằng, ngọt dịu. Trân châu trắng giòn dai được thêm" +
+                " sẵn mang lại cho bạn cảm giác đã trong từng ngụm, thỏa mãn cơn thèm trà sữa ngay");
+        productArrayList.add(product2);
+
+        Product product3 = new Product();
+        product3.setName("Cà Phê Lúa Mạch Đá");
+        product3.setPrice("71000");
+        product3.setImg(R.drawable.mon3);
+        ArrayList<Size> sizes3 = new ArrayList<>();
+        product3.setSize(sizes3);
+        ArrayList<Topping> toppings3 = new ArrayList<>();
+        toppings3.add(new Topping("Expresso","6000"));
+        toppings3.add(new Topping("Sauce Chocolate","12000"));
+        toppings3.add(new Topping("Sauce ahihi","15000"));
+        product3.setTopping(toppings3);
+        product3.setDescription("Đắm chìm vào hương vị cà phê mới mẻ khi kết hợp cùng lúa mạch thơm ngon. " +
+                "Không quá đắng lại ngọt dịu dễ ghiền. Thưởng thức ngay nhé");
+        productArrayList.add(product3);
+
+        Product product4 = new Product();
+        product4.setName("Cà Phê Sữa Đá");
+        product4.setPrice("72000");
+        product4.setSize(sizes2);
+        product4.setDescription("Cà phê phin kết hợp cùng sữa đặc là một sáng tạo đầy tự hào của người việt, " +
+                "được xem là món uống thương hiệu của Việt Nam");
+        product4.setImg(R.drawable.mon4);
+        productArrayList.add(product4);
+        productArrayList.add(product1);
+        productArrayList.add(product2);
+        productArrayList.add(product3);
+        productArrayList.add(product4);
+        productArrayList.add(product1);
+        productArrayList.add(product2);
+        productArrayList.add(product3);
+        productArrayList.add(product4);
+
+        RecyclerView recyclerView = v.findViewById(R.id.gridview_food);
+        ProductAdapter productAdapter = new ProductAdapter(productArrayList,getActivity());
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        recyclerView.setAdapter(productAdapter);
+
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        return v;
     }
 }

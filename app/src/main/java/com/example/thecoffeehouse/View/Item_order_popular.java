@@ -29,7 +29,6 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class Item_order_popular extends Fragment {
-    GridView gridView;
     ArrayList<Product> productArrayList;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -85,7 +84,7 @@ public class Item_order_popular extends Fragment {
         product1.setPrice("69000");
         product1.setImg(R.drawable.mon1);
         ArrayList<Size> sizes1 = new ArrayList<>();
-        sizes1.add(new Size("Nhỏ",""));
+        sizes1.add(new Size("Nhỏ","0"));
         sizes1.add(new Size("Vừa","5000"));
         sizes1.add(new Size("Lớn","10000"));
         product1.setSize(sizes1);
@@ -93,6 +92,9 @@ public class Item_order_popular extends Fragment {
         toppings1.add(new Topping("Expresso","5000"));
         toppings1.add(new Topping("Sauce Chocolate","10000"));
         product1.setTopping(toppings1);
+        product1.setDescription("Tận hưởng từng ngụm ấm áp, ngọt dịu từ chocolate thượng hạng kết" +
+                " hợp với lúa mạch thơm lừng. Vị Giáng sinh đặc biệt này là dành cho bạn, thưởng" +
+                " thức ngay nhé");
         productArrayList.add(product1);
 
         Product product2 = new Product();
@@ -100,13 +102,17 @@ public class Item_order_popular extends Fragment {
         product2.setPrice("70000");
         product2.setImg(R.drawable.mon2);
         ArrayList<Size> sizes2 = new ArrayList<>();
-        sizes2.add(new Size("Nhỏ",""));
+        sizes2.add(new Size("Nhỏ","0"));
         sizes2.add(new Size("Vừa","5000"));
         product2.setSize(sizes2);
         ArrayList<Topping> toppings2 = new ArrayList<>();
         toppings2.add(new Topping("Expresso","6000"));
         toppings2.add(new Topping("Sauce Chocolate","12000"));
         product2.setTopping(toppings2);
+        product2.setDescription("Đổi vị tươi mới - Vừa ngon vừa khỏe. Mỗi ngày với Nhà sẽ " +
+                "là điều tươi mới hơn với sữa đặt hạt mắc ca thơm ngon, bổ dưỡng quyện cùng " +
+                "nền trà OOlong cho vị cân bằng, ngọt dịu. Trân châu trắng giòn dai được thêm" +
+                " sẵn mang lại cho bạn cảm giác đã trong từng ngụm, thỏa mãn cơn thèm trà sữa ngay");
         productArrayList.add(product2);
 
         Product product3 = new Product();
@@ -120,11 +126,16 @@ public class Item_order_popular extends Fragment {
         toppings3.add(new Topping("Sauce Chocolate","12000"));
         toppings3.add(new Topping("Sauce ahihi","15000"));
         product3.setTopping(toppings3);
+        product3.setDescription("Đắm chìm vào hương vị cà phê mới mẻ khi kết hợp cùng lúa mạch thơm ngon. " +
+                "Không quá đắng lại ngọt dịu dễ ghiền. Thưởng thức ngay nhé");
         productArrayList.add(product3);
 
         Product product4 = new Product();
         product4.setName("Cà Phê Sữa Đá");
         product4.setPrice("72000");
+        product4.setSize(sizes1);
+        product4.setDescription("Cà phê phin kết hợp cùng sữa đặc là một sáng tạo đầy tự hào của người việt, " +
+                "được xem là món uống thương hiệu của Việt Nam");
         product4.setImg(R.drawable.mon4);
         productArrayList.add(product4);
         productArrayList.add(product1);

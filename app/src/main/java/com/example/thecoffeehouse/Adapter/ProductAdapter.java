@@ -62,12 +62,14 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 TextView name = productdetails301.findViewById(R.id.nameofproduct);
                 TextView price = productdetails301.findViewById(R.id.priceofproduct);
                 ImageView image = productdetails301.findViewById(R.id.imageofproduct);
+                TextView description =productdetails301.findViewById(R.id.descripton);
                 totalmoney = productdetails301.findViewById(R.id.totalmoney);
                 TextView numberofproduct = productdetails301.findViewById(R.id.numberofproduct);
                 name.setText(product.getName());
                 price.setText(product.getPrice());
                 image.setImageResource(product.getImg());
                 totalmoney.setText(product.getPrice());
+                description.setText(product.getDescription());
                 int priceofproduct =Integer.parseInt(product.getPrice()) ;
 
                 product_order = new Product_order();

@@ -38,11 +38,14 @@
             android:src="@drawable/ic_share"/>
     </LinearLayout>
     <ImageView
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/trasua"
         android:scaleType="fitXY"/>
     <TextView
+        android:paddingLeft="10dp"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -53,6 +56,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"/>
     <TextView
+        android:paddingLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ngày 11 tháng 11 năm 2020"
@@ -60,6 +64,8 @@
         android:layout_marginTop="5dp"
         android:textColor="@color/black"/>
     <TextView
+        android:paddingLeft="15dp"
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Team Hà Nội ơi"

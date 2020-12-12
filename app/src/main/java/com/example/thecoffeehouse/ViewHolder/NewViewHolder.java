@@ -10,10 +10,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.thecoffeehouse.R;
 
-public class NewViewHolder extends RecyclerView.ViewHolder{
+public class NewViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener{
     private ImageView img;
     private TextView title,description;
     private TextView action;
+    private ItemClickListener itemClickListener;
+
+    public ItemClickListener getItemClickListener() {
+        return itemClickListener;
+    }
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
 
     public ImageView getImg() {
         return img;
@@ -53,5 +62,18 @@ public class NewViewHolder extends RecyclerView.ViewHolder{
         this.setTitle((TextView) itemView.findViewById(R.id.titleofnews));
         this.setDescription((TextView) itemView.findViewById(R.id.desofnews));
         this.setAction((TextView) itemView.findViewById(R.id.actionofnews));
+        itemView.setOnClickListener(this);
+        itemView.setOnLongClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        itemClickListener.onClick(v,getAdapterPosition(),false);
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        itemClickListener.onClick(v,getAdapterPosition(),true);
+        return true;
     }
 }
