@@ -75,61 +75,79 @@ public class Item_order_food extends Fragment {
         Product product1 = new Product();
         product1.setName("Macca Phủ Socola");
         product1.setPrice("45000");
-        product1.setImg(R.drawable.mon1);
+        product1.setImg(R.drawable.macca);
         product1.setDescription("Sô cô la thơm lừng bao bọc hạt mắc ca bùi béo thiệt ngon - món ăn vặt" +
                 "đắng nhẹ, ngọt ngào không thể thiếu cho mùa Giáng sinh ấm áp, cắn 1 miếng là mê ngay" +
                 "và nhâm nhi với món nước nào cũng hợp đấy");
         productArrayList.add(product1);
 
         Product product2 = new Product();
-        product2.setName("Trà sữa Mắc Ca Trân Châu Trắng");
-        product2.setPrice("70000");
-        product2.setImg(R.drawable.mon2);
+        product2.setName("Đậu Phộng Tỏi Ớt");
+        product2.setPrice("15000");
+        product2.setImg(R.drawable.dauphong);
         ArrayList<Size> sizes2 = new ArrayList<>();
-        sizes2.add(new Size("Nhỏ","0"));
-        sizes2.add(new Size("Vừa","5000"));
         product2.setSize(sizes2);
         ArrayList<Topping> toppings2 = new ArrayList<>();
-        toppings2.add(new Topping("Expresso","6000"));
-        toppings2.add(new Topping("Sauce Chocolate","12000"));
         product2.setTopping(toppings2);
-        product2.setDescription("Đổi vị tươi mới - Vừa ngon vừa khỏe. Mỗi ngày với Nhà sẽ " +
-                "là điều tươi mới hơn với sữa đặt hạt mắc ca thơm ngon, bổ dưỡng quyện cùng " +
-                "nền trà OOlong cho vị cân bằng, ngọt dịu. Trân châu trắng giòn dai được thêm" +
-                " sẵn mang lại cho bạn cảm giác đã trong từng ngụm, thỏa mãn cơn thèm trà sữa ngay");
+        product2.setDescription("Là món ăn chơi nhưng ngọt thiệt mới nhất của The CoffeeHouse, đậu phộng béo " +
+                "được áo thêm lớp tỏi ớt mặn mặn, ngọt ngọt và chút cay cay. Vừa nhâm nhi với trà hay món " +
+                "nước mát lạnh nữa là đúng bài, ăn hoài không ngán nhé!");
         productArrayList.add(product2);
 
         Product product3 = new Product();
-        product3.setName("Cà Phê Lúa Mạch Đá");
-        product3.setPrice("71000");
-        product3.setImg(R.drawable.mon3);
+        product3.setName("Mít Sấy");
+        product3.setPrice("20000");
+        product3.setImg(R.drawable.mitxay);
         ArrayList<Size> sizes3 = new ArrayList<>();
         product3.setSize(sizes3);
         ArrayList<Topping> toppings3 = new ArrayList<>();
-        toppings3.add(new Topping("Expresso","6000"));
-        toppings3.add(new Topping("Sauce Chocolate","12000"));
-        toppings3.add(new Topping("Sauce ahihi","15000"));
         product3.setTopping(toppings3);
-        product3.setDescription("Đắm chìm vào hương vị cà phê mới mẻ khi kết hợp cùng lúa mạch thơm ngon. " +
-                "Không quá đắng lại ngọt dịu dễ ghiền. Thưởng thức ngay nhé");
+        product3.setDescription("Mít sấy khô vàng ươm giòn rụm, khi ăn vẫn giữ nguyên được vị ngọt lịm của mít tươi");
         productArrayList.add(product3);
 
         Product product4 = new Product();
-        product4.setName("Cà Phê Sữa Đá");
-        product4.setPrice("72000");
+        product4.setName("Cam tươi Sấy Dẻo");
+        product4.setPrice("35000");
         product4.setSize(sizes2);
-        product4.setDescription("Cà phê phin kết hợp cùng sữa đặc là một sáng tạo đầy tự hào của người việt, " +
-                "được xem là món uống thương hiệu của Việt Nam");
-        product4.setImg(R.drawable.mon4);
+        product4.setDescription("Cam tươi được sấy với độ ẩm vừa phải, vị chua thanh thích hợp cho các bạn thích healthy");
+        product4.setImg(R.drawable.camvang);
         productArrayList.add(product4);
-        productArrayList.add(product1);
-        productArrayList.add(product2);
-        productArrayList.add(product3);
-        productArrayList.add(product4);
-        productArrayList.add(product1);
-        productArrayList.add(product2);
-        productArrayList.add(product3);
-        productArrayList.add(product4);
+
+        Product product5 = new Product();
+        product5.setName("Điều vàng mật ong");
+        product5.setPrice("39000");
+        product5.setSize(sizes2);
+        product5.setDescription("Ăn vặt cũng phải healty. Hạt điều nhiều dinh dưỡng phủ lớp mật ong ngọt ngọt " +
+                "mặn mặn ăn hoài ngon hoài hứa luôn :))");
+        product5.setImg(R.drawable.hatdieu);
+        productArrayList.add(product5);
+
+        Product product6 = new Product();
+        product6.setName("Heo Sấy Xông khói");
+        product6.setPrice("35000");
+        product6.setSize(sizes2);
+        product6.setDescription("Thịt heo được ướp gia vị đậm đà - mặn, ngọt, chua, cay ngon ngất ngây. Chút mồi sừng " +
+                "sựt để cuộc hèn không bao giờ chán.");
+        product6.setImg(R.drawable.heosay);
+        productArrayList.add(product6);
+
+        Product product7 = new Product();
+        product7.setName("Mochi Kem Matcha");
+        product7.setPrice("19000");
+        product7.setSize(sizes2);
+        product7.setDescription("Vừa quen vừa lạ từ vỏ bánh mềm dẻo, đến lớp kem lạnh và nhân trà xanh đậm vị, gọi 1 chiếc Mochi" +
+                " cho ngày thiệt tươi nha. Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng");
+        product7.setImg(R.drawable.mochi);
+        productArrayList.add(product7);
+
+        Product product8 = new Product();
+        product8.setName("Mousse Gấu Chocolate");
+        product8.setPrice("39000");
+        product8.setSize(sizes2);
+        product8.setDescription("Với vẻ bề ngoài đáng yêu và hương vị ngọt ngào thơm béo nhất định bạn phải thử ít nhất một lần");
+        product8.setImg(R.drawable.banhgau);
+        productArrayList.add(product8);
+
 
         RecyclerView recyclerView = v.findViewById(R.id.gridview_food);
         ProductAdapter productAdapter = new ProductAdapter(productArrayList,getActivity());
