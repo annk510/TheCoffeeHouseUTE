@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#f5f5f5">
+    android:background="#efeef3">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -82,6 +82,7 @@
             android:drawableLeft="@drawable/ic_star"
             android:drawablePadding="15dp"/>
         <TextView
+            android:id="@+id/txt_user_information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thông tin tài khoản"
@@ -92,6 +93,7 @@
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="15dp"/>
         <TextView
+            android:id="@+id/txt_user_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lịch sử"
@@ -102,6 +104,7 @@
             android:drawableLeft="@drawable/ic_history"
             android:drawablePadding="15dp"/>
         <TextView
+            android:id="@+id/txt_user_help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Giúp đỡ"
