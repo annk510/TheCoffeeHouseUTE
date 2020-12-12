@@ -29,11 +29,40 @@ public class Fragment_news extends Fragment {
         Section section = new Section();
         section.setHeaderTitle("Ưu đãi đặc biệt");
         ArrayList<News> news = new ArrayList<>();
-        news.add(new News(R.drawable.trasua,"Giảm 40%! Amazing goodjobs","Người ta hứa yêu yêu cái đầu buồi","Order ngay"));
-        news.add(new News(R.drawable.trasua,"Giảm 40%! Amazing goodjobs","Người ta hứa yêu yêu cái đầu buồi","Order ngay"));
-        news.add(new News(R.drawable.trasua,"Giảm 40%! Amazing goodjobs","Người ta hứa yêu yêu cái đầu buồi","Order ngay"));
+        news.add(new News(R.drawable.trasua,"Giảm 50%, thèm gì gọi nhé Nhà mang tới liền",
+                "Hòa vào không kí sale cuối năm mình nghỉ tay gọi món yêu thích, Nhà giảm 50% khi nhập mã MERRY50 " +
+                        "để lên tinh thần săn sale thoăn thoắt. Shipper Nhà rộn ràng chờ bạn đặt là giao liền tận nơi, chỉ " +
+                        "30 phút và Freeship luôn nha. Sướng nhất team săn sale rồi Order liền thôi!","Order ngay"));
+        news.add(new News(R.drawable.news1,"Nhà mời cà phê đậm đà chỉ 12k",
+                "Tuần mới chỉ thật sự tươi khi có một tách cà phê đậm đà kề bên. Biết vậy nên Nhà mời liền bạn " +
+                        "có hóa đơn từ 50k mua cà phê Việt Nam giá chỉ 12k. Nhanh tay mở app, nhâp mã YEUCAPHE để nhận ưu đãi " +
+                        "Dù bạn ở đâu Shipper Nhà cũng Freeship tới ngay trong 30p","Order ngay"));
+        news.add(new News(R.drawable.trasua,"Nhà mời 20% PICKUP nha","Trải nghiệm nay tính năng PICKUP của Nhà với ưu đãi" +
+                " 20% cho đơn hàng chỉ từ 2 món, khi nhập mã PICKUPDI NÀO. Chỉ càn vài thao tác đơn giản bạn đã có thể ghé Nhà với thần " +
+                "thái cự ngầu để láy món nước yêu thích","Order ngay"));
+        news.add(new News(R.drawable.trasua,"Bánh ngon Nhà mời, chỉ 19.000đ!","Cuối năm bận rộn thi cử, chạy số, chiến deadline" +
+                " nhưng không được bỏ bữa đâu nha ấy nhé! Nhà luôn sẵn sàng giao tận nơi bánh mì nóng giòn cùng cà phê đậm đà" +
+                " trà mát lạnh cho bạn nạp căng năng lượng","Order ngay"));
         section.setListContent(news);
         sections.add(section);
+
+
+        Section section1 = new Section();
+        section1.setHeaderTitle("Cập nhật từ nhà");
+        ArrayList<News> news1 = new ArrayList<>();
+        news1.add(new News(R.drawable.trasua,"Nhà Riverside Vũ Tông Phan Hà Nội khai trương",
+                "Người ta dậy thì thành công, còn chúng mình dậy thì nhớ mang chiếc áo đủ ấm, ghé ngay Nhà " +
+                        "Riverside Vũ Tông Phan - Hà Nội mới toanh vui khai trương linh đình(07/12 - 09/12) và tham gia ngay" +
+                        " Vòng quay may mắn để nhận quà cực xịn nha","Xem chi tiết"));
+        news1.add(new News(R.drawable.trasua,"Taste of Xmas - Chạm vị Giáng sinh",
+                "Những ngày cuối năm thật khác. Giáng sinh cũng vì thế mà khác hơn sau 1 năm đặc biệt. Thế nhưng tại Nhà" +
+                        " năm nay, vị giáng sinh mà bạn yêu thích mong chờ từ trước đến nay vẫn sẽ vẹn nguyên và đong đầy- tất cả " +
+                        "đều sống động qua từng khoảnh khắc từng ngóc ngách quanh chiếc bàn cà phê ấm cúng","Xem chi tiết"));
+        news1.add(new News(R.drawable.trasua,"Bánh ngon Nhà mời, chỉ 19.000đ!","Cuối năm bận rộn thi cử, chạy số, chiến deadline" +
+                " nhưng không được bỏ bữa đâu nha ấy nhé! Nhà luôn sẵn sàng giao tận nơi bánh mì nóng giòn cùng cà phê đậm đà" +
+                " trà mát lạnh cho bạn nạp căng năng lượng","Order ngay"));
+        section1.setListContent(news1);
+        sections.add(section1);
         SectionAdapter sectionAdapter = new SectionAdapter(sections,getContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
@@ -48,14 +77,7 @@ public class Fragment_news extends Fragment {
             }
         });
 
-//        ImageView img_order = v.findViewById(R.id.img_news_order);
-//        img_order.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent =  new Intent(getActivity(),Fragment_order.class);
-//                startActivity(intent);
-//            }
-//        });
+//
         return v;
     }
 }
